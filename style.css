@@ -1,0 +1,50 @@
+:root{
+  --bg:#0f1720;
+  --panel:#0b1220;
+  --accent:#9ad3ff;
+}
+html,body{height:100%;margin:0;font-family:"Segoe UI",YuGothic,"Hiragino Kaku Gothic ProN",sans-serif;background:var(--bg);color:#e6eef6}
+.wrap{display:flex;gap:20px;align-items:flex-start;justify-content:center;padding:24px;}
+.stage{
+  width:360px;
+  background:linear-gradient(180deg,#071122 0%, #071726 100%);
+  padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.6);
+  border:1px solid rgba(255,255,255,.04);
+}
+canvas{display:block;background:#0b1220;border-radius:6px; image-rendering:crisp-edges;}
+.hud{
+  width:300px;padding:18px;background:linear-gradient(180deg,#071722,#06121a);
+  border-radius:12px;border:1px solid rgba(255,255,255,.03);box-shadow:0 8px 24px rgba(0,0,0,.6);
+}
+h1{margin:0 0 12px 0;font-size:18px;color:var(--accent)}
+.row{display:flex;gap:12px;margin-bottom:12px;align-items:center;flex-wrap:wrap;}
+.small{font-size:13px;color:#cfe9ff}
+.nextBox,.infoBox{background:rgba(255,255,255,.03);padding:8px;border-radius:8px;}
+.controls{font-size:13px;line-height:1.6}
+.score{font-size:20px;color:#fff;margin:6px 0}
+.meta{font-size:12px;color:#9fbfdc}
+.btn{background:#16324a;padding:8px 10px;border-radius:8px;cursor:pointer;color:#cfe9ff;border:1px solid rgba(255,255,255,.02)}
+.btn:active{transform:translateY(1px)}
+.credit{font-size:12px;color:#8fb0cf;margin-top:10px}
+footer{position:fixed;left:10px;bottom:10px;color:#6f8ea7;font-size:12px}
+.popup{position:fixed;left:50%;top:60px;transform:translateX(-50%);pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:4px}
+
+/* Pause overlay */
+.pause-overlay{
+  position:fixed;
+  left:0;top:0;right:0;bottom:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(6,10,14,0.55);
+  z-index:999;
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .18s ease, visibility .18s;
+}
+.pause-overlay.show{ visibility:visible; opacity:1; }
+.pause-box{
+  background:linear-gradient(180deg, rgba(10,14,20,0.95), rgba(8,12,18,0.95));
+  padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);
+  text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+.pause-text{ font-size:44px; font-weight:800; color:#fff; letter-spacing:4px; margin-bottom:8px; }
+.pause-sub{ font-size:13px; color:#9fbfdc; margin-bottom:14px; }

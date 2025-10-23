@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ぷよぷよ風（Pause 追加）</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="stage">
+      <canvas id="canvas" width="360" height="720"></canvas>
+    </div>
+
+    <div class="hud">
+      <h1>ぷよぷよ風 — 改良版</h1>
+
+      <div class="row">
+        <div class="infoBox">
+          <div class="small">スコア</div>
+          <div id="score" class="score">0</div>
+          <div class="meta">連鎖: <span id="chain">0</span> ・ 消した数: <span id="cleared">0</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nextBox"><div class="small">ネクスト</div><canvas id="nextCanvas" width="120" height="140"></canvas></div>
+        <div class="nextBox"><div class="small">NEXT 2</div><canvas id="next2Canvas" width="120" height="140"></canvas></div>
+      </div>
+
+      <div class="row controls">
+        <div><strong>操作</strong></div>
+        <div>← → : 左右移動</div>
+        <div>↑ / Z : 回転（反時計）</div>
+        <div>X / Shift : 回転（時計）</div>
+        <div>↓ : ソフトドロップ</div>
+        <div>Space : ハードドロップ</div>
+        <div>C : インスタントドロップ</div>
+        <div>P : 一時停止 / 再開</div>
+      </div>
+
+      <div style="margin-top:12px" class="row">
+        <button id="restart" class="btn">リスタート</button>
+        <button id="toggleGhost" class="btn">ゴースト: ON</button>
+        <button id="pauseBtn" class="btn">Pause</button>
+      </div>
+
+      <div class="credit">制作: HTML+JS GPT 🔨🤖🔧 ・ Pause 機能付き</div>
+    </div>
+  </div>
+
+  <div class="popup" id="popupRoot"></div>
+
+  <!-- Pause overlay -->
+  <div id="pauseOverlay" class="pause-overlay" aria-hidden="true">
+    <div class="pause-box">
+      <div class="pause-text">PAUSED</div>
+      <div class="pause-sub">Press P or click Resume to continue</div>
+      <button id="resumeBtn" class="btn">Resume</button>
+    </div>
+  </div>
+
+  <footer>公式ルールを簡易化した再現です（細かい挙動は調整しています）</footer>
+
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</body>
+</html>
